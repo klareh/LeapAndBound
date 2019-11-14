@@ -43,6 +43,34 @@ public class helloworld : MonoBehaviour
               obj.transform.position -= new Vector3((Time.time - lastTime)*speed, 0, 0);
               lastTime = Time.time;
         }
+        // Up
+        if (Input.GetKeyDown(KeyCode.UpArrow)){
+
+                lastTime = Time.time;
+
+        }       
+
+        if (Input.GetKey(KeyCode.UpArrow)) {
+
+             
+              obj.transform.position += new Vector3(0, (Time.time - lastTime)*speed, 0);
+              lastTime = Time.time;
+        }
+        // Down
+        if (Input.GetKeyDown(KeyCode.DownArrow)){
+
+                lastTime = Time.time;
+
+        }       
+
+        if (Input.GetKey(KeyCode.DownArrow)) {
+
+             
+              obj.transform.position -= new Vector3(0, (Time.time - lastTime)*speed, 0);
+              lastTime = Time.time;
+        }
+
+
     }
 }
 
