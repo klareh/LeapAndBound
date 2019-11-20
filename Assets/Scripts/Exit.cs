@@ -24,10 +24,16 @@ public class Exit : MonoBehaviour
     IEnumerator nextFloor(GameObject gameObject, float delay)
     {
         Transform transform = gameObject.GetComponent(typeof(Transform)) as Transform;
+        Rigidbody2D rigidbody = gameObject.GetComponent(typeof(Rigidbody2D)) as Rigidbody2D;
+
         yield return new WaitForSeconds(delay);
-        transform.position = new Vector3(0, 0, -20);
-        yield return new WaitForSeconds(delay);
+        rigidbody.bodyType = RigidbodyType2D.Kinematic;
+        rigidbody.velocity = new Vector2(0, 5);
+        yield return new WaitForSeconds(1);
+        rigidbody.velocity = new Vector2(0, 0);
         transform.position = new Vector3(0, 0, -6);
+        rigidbody.bodyType = RigidbodyType2D.Dynamic;
+
     }
 
 }

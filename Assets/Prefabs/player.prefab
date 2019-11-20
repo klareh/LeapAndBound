@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 518374176851976808}
   - component: {fileID: 518374176851976822}
   - component: {fileID: 518374176851976821}
-  - component: {fileID: 518374176851976820}
-  m_Layer: 0
+  - component: {fileID: 2019004708}
+  m_Layer: 10
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,44 +114,26 @@ MonoBehaviour:
   speed: 3
   bulletXSpeed: 0
   bulletYSpeed: 0
+  time: 1
   bulletVector: {x: 0, y: 0, z: 0}
---- !u!60 &518374176851976820
-PolygonCollider2D:
+--- !u!50 &2019004708
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518374176851976809}
-  m_Enabled: 1
-  m_Density: 1
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6, y: 0.5}
-    newSize: {x: 0.6, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.29999998, y: 0.03}
-      - {x: 0.29, y: 0.04}
-      - {x: 0.04, y: 0.22999999}
-      - {x: -0.01, y: 0.24}
-      - {x: -0.049999997, y: 0.24}
-      - {x: -0.22999999, y: 0.099999994}
-      - {x: -0.29999998, y: 0.01}
-      - {x: -0.29999998, y: -0.099999994}
-      - {x: -0.29, y: -0.13}
-      - {x: -0.22999999, y: -0.13}
-      - {x: -0.14999999, y: -0.24}
-      - {x: -0.12, y: -0.25}
-      - {x: 0.17, y: -0.25}
-      - {x: 0.17999999, y: -0.14}
-      - {x: 0.29999998, y: -0.14}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
