@@ -8,12 +8,13 @@ public class Attach : MonoBehaviour
     public Bullet bullet;
     public Transform player;
 
-
     public float speed = 3;
     public float bulletXSpeed = 0;
     public float bulletYSpeed = 0;
+    public float time = 1;
     public Vector3 bulletVector = new Vector3(0, 0, 0);
 
+    private bool isShooting = false;
 
     void Start()
     {
@@ -24,11 +25,20 @@ public class Attach : MonoBehaviour
     {
         updateFaceDirection();
 
-        if (Input.GetKey(KeyCode.Space)) {
-            Vector3 initPosition = getPlayerPosition();
-            Bullet p = Instantiate(bullet, initPosition, Quaternion.identity);
-            p.velocity = new Vector3(bulletXSpeed, bulletYSpeed, 0);
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (!isShooting)
+                StartCoroutine(shoot());
         }
+    }
+
+    IEnumerator shoot()
+    {
+        isShooting = true;
+        Vector3 initPosition = getPlayerPosition();
+        Bullet p = Instantiate(bullet, initPosition, Quaternion.identity);
+        p.velocity = new Vector3(bulletXSpeed, bulletYSpeed, 0);
+        yield return new WaitForSeconds(time);
+        isShooting = false;
     }
 
     private void updateFaceDirection() {
